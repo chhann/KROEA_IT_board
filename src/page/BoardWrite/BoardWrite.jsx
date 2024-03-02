@@ -5,7 +5,6 @@ import { QUILL_MODULES } from "../../constants/quillModules";
 
 import "../../constants/quill-styles.css"
 
-
 import { useMaxSizePasswordValidateInput, useMaxSizeTitleValidateInput, useMaxSizeWriterValidateInput, useQuillInput } from "../../hooks/inputHook";
 import { useNavigate } from "react-router-dom";
 import { useLoadList } from "../../hooks/boardListHook";
@@ -59,7 +58,7 @@ export default function BoardWrite() {
         newBoardList = [...boardList, board];
 
         localStorage.setItem("boardList", JSON.stringify(newBoardList));
-        alert("글 작성 완료.");
+        alert("글 작성이 완료되었습니다.");
         navigate("/board/list?page=1");
     }
 

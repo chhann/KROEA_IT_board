@@ -1,4 +1,5 @@
 import BoardList from "../page/BoardList/BoardList";
+import BoardView from "../page/BoardView/BoardView";
 import BoardWrite from "../page/BoardWrite/BoardWrite";
 
 export const MENU = [
@@ -16,5 +17,14 @@ export const MENU = [
         },
         name: "게시글 목록",
         element:<BoardList/>
+    },
+    {
+        id:3,
+        path: "/board/view",
+        params: {
+            page: 1,
+        },
+        name: "게시글 뷰",
+        element:<BoardView/>
     }
 ]
