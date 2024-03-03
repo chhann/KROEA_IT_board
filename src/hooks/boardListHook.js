@@ -32,7 +32,6 @@ export function useLoadListByPageNumber(page) {
     const startPageNumber = pageNumber % 5 === 0 ? pageNumber - 4 : (pageNumber - (pageNumber % 5)) + 1
     const endPageNumber = startPageNumber + 4 <= totalPageCount ? startPageNumber + 4 : totalPageCount;
 
-    console.log(totalPageCount);
     
 
     let pageNumbers = useMemo(() => {

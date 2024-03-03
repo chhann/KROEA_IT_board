@@ -67,7 +67,7 @@ export default function BoardWrite() {
     return (
         <>
             <div css={S.board_title}>
-                <div>공지사항</div>
+                <div>KOREA IT 게시판</div>
                 <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
             </div>
             <div>

@@ -22,7 +22,7 @@ export const MENU = [
         id:3,
         path: "/board/view",
         params: {
-            page: 1,
+            boardId: 1,
         },
         name: "게시글 뷰",
         element:<BoardView/>

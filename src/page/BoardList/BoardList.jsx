@@ -31,7 +31,14 @@ export default function BoardList() {
                     {boardList.map((board, index) =>
                         <div key={board.boardId}>
                             <div css={S.num}>{(page-1)*10 + (index+1)}</div>
-                            <div css={S.title}>{board.boardTitle}</div>
+                            <div css={S.title}>
+                                <Link 
+                                    to={`/board/view?boardId=${board.boardId}`}
+                                    state={page}
+                                >
+                                    {board.boardTitle}
+                                </Link>
+                            </div>
                             <div css={S.writer}>{board.boardWriter}</div>
                             <div css={S.date}>{board.boardDate}</div>
                             <div css={S.count}>조회</div>

@@ -62,6 +62,10 @@ export const num = css`
 export const title = css`
     width: 60%;
     text-align: left;
+    & > a {
+        text-decoration: none;
+        color: inherit;
+    }
     @media (max-width: 1000px) {
         text-indent: 10px !important;
     }
