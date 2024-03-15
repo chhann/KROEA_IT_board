@@ -2,7 +2,7 @@ import {css} from "@emotion/react";
 
 export const layout = css`
     width: 1000px;
-    margin: 100px auto;
+    margin: 70px auto;
     @media (max-width: 1000px) {
         width: 100%;
         min-width: 320px;

@@ -3,7 +3,7 @@ import BoardList from "../page/BoardList/BoardList";
 import BoardMyPage from "../page/BoardMyPage/BoardMyPage";
 import BoardView from "../page/BoardView/BoardView";
 import BoardWrite from "../page/BoardWrite/BoardWrite";
-
+ 
 export const MENU = [
     {
         id:1,
