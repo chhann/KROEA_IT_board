@@ -1,25 +1,25 @@
 /** @jsxImportSource @emotion/react */
-import { Link } from "react-router-dom";
 import * as S from "./style"
-import BoardHome from "../page/BoardHome/BoardHome";
-import BoardMyPage from "../page/BoardMyPage/BoardMyPage";
-import BoardList from "../page/BoardList/BoardList";
+import { Link } from "react-router-dom";
+import BoardList from "../../page/BoardList/BoardList";
 import { FaHome, FaUser, FaClipboardList   } from "react-icons/fa";
+import SigninPage from "../../page/SigninPage/SigninPage";
+import HomePage from "../../page/HomePage/HomePage";
 
 export const SiDEMENU = [
     
     {
         id:1,
-        path: "/board/home",
+        path: "/",
         name: "게시글 홈",
-        element:<BoardHome/>,
+        element:<HomePage/>,
         icon:<FaHome />
     },
     {
         id:2,
-        path: "/board/mypage",
+        path: "/auth/signin",
         name: "게시글 마이페이지",
-        element:<BoardMyPage/>,
+        element:<SigninPage/>,
         icon:<FaUser />
     }, 
     {
@@ -33,15 +33,13 @@ export const SiDEMENU = [
         icon:<FaClipboardList />
     },
 ]
-[1, 2, 3] = a
-
-[{a:2},{b:4},{c:5}] = b
 
 
 
 
 
-c.map((number) => <div>{number.a.t}</div>)
+
+
 
 
 function SideBar(props) {
@@ -55,7 +53,6 @@ function SideBar(props) {
                             to={`${menu.path}${!menu.params ? "" : "?" + Object.entries(menu.params).map(([key, value]) => key + "=" + value).join("&")}`} 
                             key={menu.id}
                         >
-
                             <li>{menu.icon}</li>
                         </Link>
                     )

@@ -1,6 +1,4 @@
-import BoardHome from "../page/BoardHome/BoardHome";
 import BoardList from "../page/BoardList/BoardList";
-import BoardMyPage from "../page/BoardMyPage/BoardMyPage";
 import BoardView from "../page/BoardView/BoardView";
 import BoardWrite from "../page/BoardWrite/BoardWrite";
  
@@ -30,18 +28,4 @@ export const MENU = [
         name: "게시글 뷰",
         element:<BoardView/>
     },
-    {
-        id:4,
-        path: "/board/home",
-        name: "게시글 홈",
-        element:<BoardHome/>,
-        icon:"홈아이콘"
-    },
-    {
-        id:5,
-        path: "/board/mypage",
-        name: "게시글 마이페이지",
-        element:<BoardMyPage/>,
-        icon:"마이페이지아이콘"
-    }
 ]

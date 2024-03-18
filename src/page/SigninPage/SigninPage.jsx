@@ -5,7 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
-function BoardMyPage(props) {
+function SigninPage(props) {
     return (
         <>
         <div>
@@ -23,11 +23,13 @@ function BoardMyPage(props) {
                             <input type="text" css={S.inputLine} required/>
                             <label htmlFor="">Email</label>
                         </div>
+
                         <div css={S.inputBox}>
                             <span><RiLockPasswordFill/></span>
                             <input type="password" required/>
                             <label htmlFor="">Password</label>
                         </div>
+
                         <div css={S.rememberForgot}>
                             <label htmlFor="">
                                 <input type="checkbox" />
@@ -35,19 +37,19 @@ function BoardMyPage(props) {
                             </label>
                             <Link>Forgot Password?</Link>
                         </div>
+
                         <button>sign in</button>
+                        
                         <div>
                             <p>Don`t have an account?</p>
                             <Link>Register</Link>
                         </div>
                     </form>
-                    
                 </div>
-                
             </div>
         </div>
         </>
     );
 }
 
-export default BoardMyPage;
+export default SigninPage;
