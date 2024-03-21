@@ -63,7 +63,8 @@ export default function SignupPage() {
         }).then(response => {
             console.log(response);
             if(response.status === 201){
-                navigate("/auth/signin");
+                // navigate("/auth/signin");
+                
             }
         }).catch(error => {
             if(error.response.status === 400) {
