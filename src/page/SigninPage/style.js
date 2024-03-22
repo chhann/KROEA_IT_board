@@ -78,13 +78,11 @@ export const inputBox = css`
         transform: translateY(-50%);
         top:50%;
     }
-
-    
 `;
 
-export const inputLine = css`
-    padding: 0 35px 0 5px;
-`
+// export const inputLine = css`
+//     padding: 0 35px 0 5px;
+// `
 
 export const rememberForgot = css`
     font-size: 1.3rem;

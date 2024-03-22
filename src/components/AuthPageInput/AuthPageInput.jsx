@@ -1,19 +1,23 @@
 /** @jsxImportSource @emotion/react */
 import * as s from "./style";
 
-export default function AuthPageInput({ type, name, placeholder, value, onChange, onBlur, ref, message }) {
+
+export default function AuthPageInput({ type, name, placeholder, value, onChange, onBlur, ref, message, icon }) {
   return (
-    <div>
+    <>
+    <div css={s.inputBox}>
+        <span>{icon}</span>
         <input
-            // css={s.input} 
-            type={type} 
-            name={name} 
-            placeholder={placeholder} 
-            value={value}
-            onChange={onChange}
-            onBlur={onBlur}
-            ref={ref}
+          type={type} 
+          name={name}
+          value={value}
+          onChange={onChange}
+          onBlur={onBlur}
+          ref={ref}
+          required
         />
+        <label htmlFor="">{placeholder}</label>
+    </div>
         { 
           !!message && 
           <div>
@@ -26,7 +30,6 @@ export default function AuthPageInput({ type, name, placeholder, value, onChange
               { message.text }
           </div>
         }
-
-    </div>
+    </>
   )
 }

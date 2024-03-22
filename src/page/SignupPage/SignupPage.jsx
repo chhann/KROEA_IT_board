@@ -63,8 +63,8 @@ export default function SignupPage() {
         }).then(response => {
             console.log(response);
             if(response.status === 201){
-                // navigate("/auth/signin");
-                
+                alert("회원가입이 완료되었습니다.")
+                navigate("/auth/signin");
             }
         }).catch(error => {
             if(error.response.status === 400) {
@@ -97,11 +97,11 @@ export default function SignupPage() {
         </div>
         <div css={S.loginLayout}>
             <button onClick={handleSignupSubmit}>가입하기</button>
-            <AuthPageInput type={"text"} name={"username"} placeholder={"사용자이름"} value={username} onChange={userNameChange} message={usernameMessage} />
-            <AuthPageInput type={"password"} name={"password"} placeholder={"비밀번호"} value={password} onChange={passwordChange} message={passwordMessage} />
-            <AuthPageInput type={"password"} name={"checkPassword"} placeholder={"비밀번호 확인"} value={checkPassword} onChange={checkPasswordChange} onBlur={null} message={checkPasswordMessage} />
-            <AuthPageInput type={"text"} name={"name"} placeholder={"성명"} value={name} onChange={nameChange} message={nameMessage} />
-            <AuthPageInput type={"text"} name={"email"} placeholder={"이메일"} value={email} onChange={emailChange} message={emailMessage} />
+            <AuthPageInput type={"text"} name={"username"} placeholder={"Id"} value={username} onChange={userNameChange} message={usernameMessage} />
+            <AuthPageInput type={"password"} name={"password"} placeholder={"Password"} value={password} onChange={passwordChange} message={passwordMessage} />
+            <AuthPageInput type={"password"} name={"checkPassword"} placeholder={"Password Check"} value={checkPassword} onChange={checkPasswordChange} onBlur={null} message={checkPasswordMessage} />
+            <AuthPageInput type={"text"} name={"name"} placeholder={"Name"} value={name} onChange={nameChange} message={nameMessage} />
+            <AuthPageInput type={"text"} name={"email"} placeholder={"Email"} value={email} onChange={emailChange} message={emailMessage} />
         </div>
     </>
   )

@@ -1,11 +1,29 @@
 /** @jsxImportSource @emotion/react */
 import * as S from "./style";
 
-import { MdEmail } from "react-icons/md";
+import { TiUser } from "react-icons/ti";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import AuthPageInput from "../../components/AuthPageInput/AuthPageInput";
+import { useInput } from "../../hooks/userInput";
+import { signinRequset } from "../../apis/api/signin";
 
 function SigninPage(props) {
+    const [ username, usernameChange ] = useInput();
+    const [ password, passwordChange ] = useInput();
+
+    const handleSigninSubmit = () => {
+        signinRequset({
+            username,
+            password
+        }).then(response => {
+            console.log(response);
+        }).catch(error => {
+            console.log(error);
+        })
+    }
+
+
     return (
         <>
         <div>
@@ -18,17 +36,9 @@ function SigninPage(props) {
                 <div css={S.loginContainer}>
                     <h2>Login</h2>
                     <form>
-                        <div css={S.inputBox}>
-                            <span><MdEmail/></span>
-                            <input type="text" css={S.inputLine} required/>
-                            <label htmlFor="">Email</label>
-                        </div>
 
-                        <div css={S.inputBox}>
-                            <span><RiLockPasswordFill/></span>
-                            <input type="password" required/>
-                            <label htmlFor="">Password</label>
-                        </div>
+                        <AuthPageInput type={"text"} name={"username"} value={username} onChange={usernameChange} placeholder={"Id"} icon={<TiUser/>}/>
+                        <AuthPageInput type={"password"} name={"password"} value={password} onChange={passwordChange} placeholder={"Password"} icon={<RiLockPasswordFill/>}/>
 
                         <div css={S.rememberForgot}>
                             <label htmlFor="">
@@ -38,7 +48,7 @@ function SigninPage(props) {
                             <Link>Forgot Password?</Link>
                         </div>
 
-                        <button>sign in</button>
+                        <button onClink={handleSigninSubmit}>sign in</button>
                         
                         <div>
                             <p>Don`t have an account?</p>
