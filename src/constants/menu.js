@@ -2,7 +2,7 @@ import BoardList from "../page/BoardList/BoardList";
 import BoardView from "../page/BoardView/BoardView";
 import BoardWrite from "../page/BoardWrite/BoardWrite";
  
-export const MENU = [
+export const BOARD = [
     {
         id:1,
         path: "/board/write",

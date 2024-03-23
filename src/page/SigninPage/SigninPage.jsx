@@ -35,7 +35,7 @@ function SigninPage(props) {
             <div css={S.loginLayout}>
                 <div css={S.loginContainer}>
                     <h2>Login</h2>
-                    <form>
+                    
 
                         <AuthPageInput type={"text"} name={"username"} value={username} onChange={usernameChange} placeholder={"Id"} icon={<TiUser/>}/>
                         <AuthPageInput type={"password"} name={"password"} value={password} onChange={passwordChange} placeholder={"Password"} icon={<RiLockPasswordFill/>}/>
@@ -48,13 +48,13 @@ function SigninPage(props) {
                             <Link>Forgot Password?</Link>
                         </div>
 
-                        <button onClink={handleSigninSubmit}>sign in</button>
+                        <button onClick={handleSigninSubmit}>sign in</button>
                         
                         <div>
                             <p>Don`t have an account?</p>
                             <Link>Register</Link>
                         </div>
-                    </form>
+                    
                 </div>
             </div>
         </div>

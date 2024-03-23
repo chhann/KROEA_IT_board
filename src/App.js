@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { MENU } from './constants/menu';
+import { BOARD } from './constants/menu';
 import RootLayout from './components/RootLayout/RootLayout';
 import { Reset } from 'styled-reset';
 import SideBar from './components/SideBar/SideBar';
@@ -13,9 +13,9 @@ function App() {
     <Reset/>
     <RootLayout>
     <SideBar/>
-      <Routes>
-        {MENU.map(menu => <Route key={menu.id} path={menu.path} element={menu.element}/>)}
-      </Routes>
+      {/* <Routes>
+        {BOARD.map(menu => <Route key={menu.id} path={menu.path} element={menu.element}/>)}
+      </Routes> */}
       <AuthRoute/>
     </RootLayout>
     </>
