@@ -8,7 +8,7 @@ import AuthPageInput from "../../components/AuthPageInput/AuthPageInput";
 import { useInput } from "../../hooks/userInput";
 import { signinRequset } from "../../apis/api/signin";
 
-function SigninPage(props) {
+function SigninPage() {
     const [ username, usernameChange ] = useInput();
     const [ password, passwordChange ] = useInput();
 
@@ -17,9 +17,11 @@ function SigninPage(props) {
             username,
             password
         }).then(response => {
-            console.log(response);
+            const accessToken = response.data;
+            localStorage.setItem("AccessToken", accessToken);
+            window.location.replace("/account/mypage");
         }).catch(error => {
-            console.log(error);
+            alert(error.response.data);
         })
     }
 

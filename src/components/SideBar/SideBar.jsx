@@ -5,6 +5,8 @@ import BoardList from "../../page/BoardList/BoardList";
 import { FaHome, FaUser, FaClipboardList   } from "react-icons/fa";
 import SigninPage from "../../page/SigninPage/SigninPage";
 import HomePage from "../../page/HomePage/HomePage";
+import { useQueryClient } from "react-query";
+import { useEffect, useState } from "react";
 
 export const SiDEMENU = [
     
@@ -43,6 +45,15 @@ export const SiDEMENU = [
 
 
 function SideBar(props) {
+    const queryClient = useQueryClient();
+    const principalQueryState = queryClient.getQueryState("principalQuery")
+    const [ isLogin, setLogin ] = useState(false);
+
+    useEffect(() => {
+        setLogin(() => principalQueryState.status === "success");
+    },[principalQueryState.status]);
+
+
     return (
         <div css={S.sideBarLayout}>
             <ul css={S.menuList}>
