@@ -45,3 +45,19 @@ export const menuItem = css`
     
 
 `
+
+export const imgBox = css`
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 35px;
+    height: 100%;
+
+    & img {
+        height: 35px;
+    }
+`

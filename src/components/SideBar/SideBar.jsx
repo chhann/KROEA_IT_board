@@ -6,7 +6,8 @@ import { FaHome, FaUser, FaClipboardList   } from "react-icons/fa";
 import SigninPage from "../../page/SigninPage/SigninPage";
 import HomePage from "../../page/HomePage/HomePage";
 import { useQueryClient } from "react-query";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
 
 export const SiDEMENU = [
     
@@ -34,6 +35,7 @@ export const SiDEMENU = [
         element:<BoardList/>,
         icon:<FaClipboardList />
     },
+
 ]
 
 
@@ -45,29 +47,75 @@ export const SiDEMENU = [
 
 
 function SideBar(props) {
-    const queryClient = useQueryClient();
-    const principalQueryState = queryClient.getQueryState("principalQuery")
     const [ isLogin, setLogin ] = useState(false);
+    const queryClient = useQueryClient();
+    const fileRef = useRef();
+
+    const principalQueryState = queryClient.getQueryState("principalQuery")
+
+    console.log(principalQueryState);
 
     useEffect(() => {
-        setLogin(() => principalQueryState.status === "success");
+        setLogin(() => principalQueryState.status === "success" );
     },[principalQueryState.status]);
 
+
+    const handleFileChange = () => {
+
+    }
 
     return (
         <div css={S.sideBarLayout}>
             <ul css={S.menuList}>
+                <Link 
+                    css={S.menuItem} 
+                    to='/'
+                    key={1}
+                >
+                    <li><FaHome /></li>
+                </Link>
                 {
-                    SiDEMENU.map(menu =>
-                        <Link 
-                            css={S.menuItem} 
-                            to={`${menu.path}${!menu.params ? "" : "?" + Object.entries(menu.params).map(([key, value]) => key + "=" + value).join("&")}`} 
-                            key={menu.id}
-                        >
-                            <li>{menu.icon}</li>
-                        </Link>
-                    )
+                    !isLogin
+                    ? 
+                    <Link 
+                        css={S.menuItem} 
+                        to='/auth/signin'
+                        key={2}
+                    >
+                        <li><FaUser /></li>
+                    </Link>
+                    : 
+                    <Link
+                        css={S.menuItem} 
+                        to='/account/mypage'
+                    >
+                    <li>
+                    <input 
+                        type="file" 
+                        style={{
+                            display: "none"
+                        }}
+                        onChange={handleFileChange}
+                        ref={fileRef}
+                    />
+                        <div css={S.imgBox}>
+                            <img src={
+                                 
+                                 "https://www.shutterstock.com/image-vector/no-image-available-picture-coming-600nw-2057829641.jpg"
+                                
+                            } alt="" />    
+                        </div>
+                    </li>
+                    </Link>
                 }
+                
+                <Link 
+                    css={S.menuItem} 
+                    to='/board/list?page=1'
+                    key={3}
+                >
+                    <li><FaClipboardList /></li>
+                </Link>
                 
                 
             </ul>
